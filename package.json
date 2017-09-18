@@ -1,0 +1,31 @@
+{
+  "name": "Node-vash-boilerplate",
+  "version": "1.0.0",
+  "description": "A Simple Node.js/Vash Project Boilerplate",
+  "main": "./src/views/index.vash",
+  "scripts": {
+    "browserSync": "browser-sync start --proxy localhost:4000 --files src/**/*",
+    "server": "nodemon server.js",
+    "scss": "node-sass src/styles/app.scss -o public/styles",
+    "scss:watch": "npm run scss && node-sass src/styles/app.scss -wo public/styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaneicker/node-vash-boilerplate.git"
+  },
+  "author": "Alan Eicker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alaneicker/node-vash-boilerplate/issues"
+  },
+  "homepage": "https://github.com/alaneicker/node-vash-boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "path": "^0.12.7",
+    "vash": "^0.12.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.3"
+  }
+}
