@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/public'));
 
 var model = {
   title: 'Node.js/Vash Project Boilerplate',
-  content: 'Just some random content...'
+  randomContent: 'Just some random homepage content...'
 };
 
 app.get('/', function (req, res) {

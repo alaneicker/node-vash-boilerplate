@@ -14,7 +14,7 @@ In the terminal, cd into the project directory: `cd path/to/node-vash-boilerplat
 
 #### Terminal Window 1
 
-run: `nodemon server.js`
+run: `npm run server`
 
 #### Terminal Window 2
 

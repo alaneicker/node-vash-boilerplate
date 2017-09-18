@@ -2,8 +2,10 @@
 
 	@html.block('body',function (model) {
 
-    @model.content
+    <h1>Homepage</h1>
 
-  });
+		@model.randomContent
 
-});
+  })
+
+})
