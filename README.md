@@ -14,12 +14,18 @@ In the terminal, cd into the project directory: `cd path/to/node-vash-boilerplat
 
 #### Terminal Window 1
 
-run: `npm run server`
+Run: `npm run server`
 
 #### Terminal Window 2
 
-run: `npm run scss:watch`
+Run: `npm run scss:watch`
 
 #### Terminal Window 2
 
-run: `npm run browserSync`
+Run: `npm run browserSync`
+
+### TDD and Code Coverage
+
+Unit tests are located in the `src/test` directory. 
+
+Run: `npm run test` to run all unit tests.
