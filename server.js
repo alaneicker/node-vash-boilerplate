@@ -2,8 +2,8 @@ const express = require('express');
 const helmet = require('helmet');
 const path = require('path');
 const winston = require('winston');
-const port = 4000;
 const app = express();
+const port = 4000;
 const env = process.env.NODE_ENV || 'development';
 
 // Logger
