@@ -22,21 +22,12 @@ The Node-Vash Boilerplate is a simple Express Node.js application framework powe
 
 ### Run the Project Boilerplate
 
-In the terminal, cd into the project directory: `cd path/to/node-vash-boilerplate`
+1. Cd into the project directory: `cd path/to/node-vash-boilerplate`
+2. Run: `npm run dev`
 
-#### Terminal Window 1
+*This will start up the Node server at http://localhost:4000, start the node-sass watcher, and browser-sync*
 
-Run: `npm run server`
-
-#### Terminal Window 2
-
-Run: `npm run scss:watch`
-
-#### Terminal Window 2
-
-Run: `npm run browserSync`
-
-### TDD and Code Coverage
+### Run Unit Tests
 
 Unit tests are located in the `src/test` directory.
 
