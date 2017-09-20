@@ -7,7 +7,8 @@
     "browserSync": "browser-sync start --proxy localhost:4000 --files src/**/*",
     "server": "nodemon server.js",
     "scss": "node-sass src/styles/app.scss -o public/styles",
-    "scss:watch": "npm run scss && node-sass src/styles/app.scss -wo public/styles"
+    "scss:watch": "npm run scss && node-sass src/styles/app.scss -wo public/styles",
+    "test": "nyc mocha \"src/tests/**/*.spec.js\""
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,10 @@
     "vash": "^0.12.2"
   },
   "devDependencies": {
-    "node-sass": "^4.5.3"
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.5.3",
+    "node-sass": "^4.5.3",
+    "nyc": "^11.2.1"
   }
 }

@@ -16,6 +16,6 @@ app.get('/', function (req, res) {
   res.render('index', model);
 });
 
-var server = app.listen(port, function () {
+module.exports = app.listen(port, function () {
   console.log(`Node server is running on port ${port}`);
 });
