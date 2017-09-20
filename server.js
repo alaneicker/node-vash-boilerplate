@@ -7,15 +7,13 @@ app.set('view engine', 'vash');
 app.set('views', path.join(__dirname, '/src/views'));
 app.use(express.static(__dirname + '/public'));
 
-var model = {
-  title: 'Node.js/Vash Project Boilerplate',
-  randomContent: 'Just some random homepage content...'
-};
-
-app.get('/', function (req, res) {
-  res.render('index', model);
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Node.js/Vash Project Boilerplate',
+    randomContent: 'Just some random homepage content...'
+  });
 });
 
-module.exports = app.listen(port, function () {
+module.exports = app.listen(port, () => {
   console.log(`Node server is running on port ${port}`);
 });

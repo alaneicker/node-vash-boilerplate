@@ -1,3 +1,4 @@
+const sinon = require('sinon');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../../server');
@@ -7,16 +8,31 @@ chai.use(chaiHttp);
 
 describe('Server.js', () => {
 
-  describe('/GET "/"', () => {
-    it('it should GET the homepage view', (done) => {
-      chai.request(server)
-          .get('/')
-          .end((err, res) => {
-            expect(res.status).to.equal(200);
-            expect(res.body).to.be.an('object');
-            done();
-          });
+  describe('/GET Index Route', () => {
+
+    let request;
+
+    beforeEach(() => {
+      request = chai.request(server).get('/');
     });
+
+    it('Should GET the homepage view', (done) => {
+      request.end((err, res) => {
+        expect(res.status).to.equal(200);
+        expect(res.body).to.be.an('object');
+        done();
+      });
+    });
+
+    it('Should return a rendered response', () => {
+      const req = {};
+      const res = { render: sinon.spy() };
+
+      request.end((err, res) => {
+        expect(res.render.calledOnce).to.be.true;
+      });
+    });
+
   });
 
 });
