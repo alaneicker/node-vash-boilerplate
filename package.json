@@ -23,8 +23,10 @@
   "dependencies": {
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
+    "helmet": "^3.8.1",
     "path": "^0.12.7",
-    "vash": "^0.12.2"
+    "vash": "^0.12.2",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",

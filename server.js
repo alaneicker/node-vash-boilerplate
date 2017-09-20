@@ -1,7 +1,13 @@
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
+const winston = require('winston');
 const port = 4000;
 const app = express();
+const env = process.env.NODE_ENV || 'development';
+
+// Logger
+winston.add(winston.transports.File, { filename: 'winston.log' });
 
 // View Engine
 app.set('view engine', 'vash');
@@ -11,6 +17,9 @@ app.set('views', path.join(__dirname, '/src/app/views'));
 
 // Public Directory
 app.use(express.static(__dirname + '/public'));
+
+// Helmet - secures your app by setting various HTTP headers
+app.use(helmet());
 
 // Homepage
 app.get('/', (req, res) => {
@@ -22,5 +31,5 @@ app.get('/', (req, res) => {
 
 // App Listener - exported because it is needed for unit testing
 module.exports = app.listen(port, () => {
-  console.log(`Node server is running on port ${port}`);
+  console.log(`Node server is running in ${env} mode on port ${port}`);
 });
