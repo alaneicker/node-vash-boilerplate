@@ -14,6 +14,7 @@ The Node-Vash Boilerplate is a simple Express Node.js application framework powe
 * Sinon
 * Istanbul
 * Node-sass
+* Eslint
 
 ### Setup
 
@@ -32,3 +33,7 @@ The Node-Vash Boilerplate is a simple Express Node.js application framework powe
 Unit tests are located in the `src/test` directory.
 
 Run: `npm run test` to run all unit tests.
+
+### Linting
+
+Run: `npm run lint`

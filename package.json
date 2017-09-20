@@ -5,12 +5,12 @@
   "main": "./src/views/index.vash",
   "scripts": {
     "browserSync": "browser-sync start --proxy localhost:4000 --files src/**/*",
-    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others \"npm run scss:watch\" \"npm run browserSync\" \"npm run server\"",
+    "lint": "eslint \"**/*.js\"",
     "scss": "node-sass src/app/styles/app.scss -o public/styles",
     "scss:watch": "npm run scss && node-sass src/app/styles/app.scss -wo public/styles",
-    "test": "nyc mocha \"src/tests/**/*.spec.js\"",
-    "dev": "concurrently --kill-others \"npm run scss:watch\" \"npm run browserSync\" \"npm run server\""
-
+    "server": "nodemon server.js",
+    "test": "nyc mocha \"src/tests/**/*.spec.js\""
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "concurrently": "^3.5.0",
+    "eslint": "^4.7.1",
     "mocha": "^3.5.3",
     "node-sass": "^4.5.3",
     "nodemon": "^1.12.1",
