@@ -17,7 +17,7 @@ The Node-Vash Boilerplate is a simple Express Node.js application framework powe
 
 ### Setup
 
-1. Install browser-sync: `npm install -g browser-sync`
+1. Install browser-sync *(optional)*: `npm install -g browser-sync`
 2. Install project dependencies: `cd into/project/root` then run `npm install`
 
 ### Run the Project Boilerplate
