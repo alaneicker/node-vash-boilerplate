@@ -4,7 +4,7 @@
   "description": "A Simple Node.js/Vash Project Boilerplate",
   "main": "./src/views/index.vash",
   "scripts": {
-    "browserSync": "browser-sync start --proxy localhost:4000 --files src/**/*",
+    "browserSync": "browser-sync start --proxy localhost:8080 --files src/**/*",
     "dev": "concurrently --kill-others \"npm run scss:watch\" \"npm run browserSync\" \"npm run server\"",
     "lint": "eslint \"**/*.js\"",
     "scss": "node-sass src/app/styles/app.scss -o public/styles",
