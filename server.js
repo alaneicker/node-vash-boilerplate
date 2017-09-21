@@ -2,6 +2,7 @@
 
   'use strict';
 
+  const compression = require('compression');
   const express = require('express');
   const helmet = require('helmet');
   const path = require('path');
@@ -24,6 +25,9 @@
 
   // Helmet - secures your app by setting various HTTP headers
   app.use(helmet());
+
+  // compress all responses 
+  app.use(compression());
 
   // Homepage
   app.get('/', (req, res) => {

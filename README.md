@@ -8,6 +8,7 @@ The Node-Vash Boilerplate is a simple Express Node.js application framework powe
 * Vash
 * Winston
 * Helmet
+* Compression
 * Mocha
 * Chai
 * Chai-http
