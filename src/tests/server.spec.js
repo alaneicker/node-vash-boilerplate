@@ -1,38 +1,44 @@
-const sinon = require('sinon');
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const server = require('../../server');
-const expect  = require('chai').expect;
+(function () {
 
-chai.use(chaiHttp);
+  'use strict';
 
-describe('Server.js', () => {
+  const sinon = require('sinon');
+  const chai = require('chai');
+  const chaiHttp = require('chai-http');
+  const server = require('../../server');
+  const expect  = require('chai').expect;
 
-  describe('/GET Index Route', () => {
+  chai.use(chaiHttp);
 
-    let request;
+  describe('Server.js', () => {
 
-    beforeEach(() => {
-      request = chai.request(server).get('/');
-    });
+    describe('/GET Index Route', () => {
 
-    it('Should GET the homepage view', (done) => {
-      request.end((err, res) => {
-        expect(res.status).to.equal(200);
-        expect(res.body).to.be.an('object');
-        done();
+      let request;
+
+      beforeEach(() => {
+        request = chai.request(server).get('/');
       });
-    });
 
-    it('Should return a rendered response', () => {
-      const req = {};
-      const res = { render: sinon.spy() };
-
-      request.end((err, res) => {
-        expect(res.render.calledOnce).to.be.true;
+      it('Should GET the homepage view', (done) => {
+        request.end((err, res) => {
+          expect(res.status).to.equal(200);
+          expect(res.body).to.be.an('object');
+          done();
+        });
       });
+
+      it('Should return a rendered response', () => {
+        const req = {};
+        const res = { render: sinon.spy() };
+
+        request.end((err, res) => {
+          expect(res.render.calledOnce).to.be.true;
+        });
+      });
+
     });
 
   });
 
-});
+}());

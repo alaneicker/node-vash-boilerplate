@@ -1,6 +1,14 @@
 {
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "rules": {
+    "strict": ["error", "function"],
     "semi": ["error", "always"],
-    "quotes": ["error", "double"]
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "prefer-template": "error",
+    "curly": "error",
+    "default-case": "error",
+    "indent": ["error", 2]
   }
 }
