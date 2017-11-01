@@ -34,7 +34,7 @@
       }
       return compression.filter(req, res);
     }
-  }))
+  }));
 
   // Homepage
   app.get('/', (req, res) => {
