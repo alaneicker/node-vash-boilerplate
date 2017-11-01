@@ -26,8 +26,15 @@
   // Helmet - secures your app by setting various HTTP headers
   app.use(helmet());
 
-  // compress all responses
-  app.use(compression());
+  // Compress responses
+  let shouldCompress = (req, res) => {
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    return compression.filter(req, res);
+  }
+  
+  app.use(compression({filter: shouldCompress}))
 
   // Homepage
   app.get('/', (req, res) => {
