@@ -6,6 +6,7 @@
   const express = require('express');
   const helmet = require('helmet');
   const path = require('path');
+  const bodyParser = require('body-parser');
   const winston = require('winston');
   const app = express();
   const port = process.env.PORT || 8080;
@@ -20,6 +21,10 @@
   // Default View Directory
   app.set('views', path.join(__dirname, '/src/app/views'));
 
+  // Body Parser
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(bodyParser.json());
+  
   // Public Directory
   app.use(express.static(`${__dirname}/public`));
 
